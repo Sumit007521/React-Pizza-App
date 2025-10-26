@@ -12,6 +12,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CI: false # Set CI to false for this job
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
