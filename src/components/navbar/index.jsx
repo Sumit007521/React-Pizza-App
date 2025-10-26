@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context";
+import logo from "./logo.png";
 
 const options = ["pizza", "pasta", "burger", "salad", "cake", "soup", "sushi", "sandwich"];
 
@@ -22,7 +23,7 @@ export default function Navbar() {
     <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
       <h2 className="text-2xl font-semibold flex items-center gap-3">
         <NavLink to={"/"} className="flex items-center gap-3">
-          <img src="/logo.png" alt="On Food Recipes logo" className="w-20 h-20 rounded-full shadow-sm" />
+          <img src={logo} alt="Food logo" className="w-20 h-20 rounded-full shadow-sm" />
           <span className="text-black dark:text-white hover:opacity-90" style={{ color: "#FF6347" }}>Food Recipes</span>
         </NavLink>
       </h2>

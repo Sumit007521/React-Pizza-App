@@ -1,4 +1,5 @@
 import React from 'react';
+import women from './women.png';
 
 // --- 1. SAMPLE DATA ---
 const reviews = [
@@ -65,7 +66,7 @@ const ReviewCard = ({ name, avatarSrc, reviewText, timeAgo, rating }) => {
             {/* Avatar (Left side) */}
             <div className="flex-shrink-0 mr-4 mt-1">
                 <img
-                    src="/women.png"
+                    src={women}
                     alt={`Avatar of ${name}`}
                     className="w-16 p-2 h-16 rounded-full object-cover shadow-md filter contrast-75 saturate-125" // Added filters to mimic the image's style
                 />
