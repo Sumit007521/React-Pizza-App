@@ -16,7 +16,7 @@ jobs:
     environment:
       name: ${{ vars.ENVIRONMENT_NAME }}
     env:
-      CI: ${{ vars.CI }} # Set CI to false for this job
+      CI: false # Set CI to false for this job
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
