@@ -1,8 +1,9 @@
 name: Deploy React App to GitHub Pages
 
 on:
+  workflow_dispatch:
   push:
-    branches: [main]
+    branches: development
 
 permissions:
   contents: read
@@ -12,8 +13,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ vars.ENVIRONMENT_NAME }}
     env:
-      CI: false # Set CI to false for this job
+      CI: ${{ vars.CI }} # Set CI to false for this job
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,24 +24,27 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.15.0'
+          node-version: ${{ vars.NODE_VERSION }}
 
       - name: Install dependencies
-        run: npm install
+        run: ${{ vars.INSTALL_COMMAND }}
+
+      - name: Check Linting
+        run: ${{ vars.LINT_COMMAND }}   
 
       - name: Build React app
-        run: npm run build
+        run: ${{ vars.BUILD_COMMAND }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./${{ vars.BUILD_DIR }}
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: ${{ vars.DEPLOY_ENVIRONMENT }}
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
