@@ -14,9 +14,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment:
-      name: ${{ vars.ENVIRONMENT_NAME }}
+      name: production
     env:
-      CI: false # Set CI to false for this job
+      CI: ${{ vars.CI }} # Set CI to false for this job
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -44,7 +44,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: ${{ vars.DEPLOY_ENVIRONMENT }}
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
