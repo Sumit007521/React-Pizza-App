@@ -2,8 +2,6 @@ name: Deploy React App to GitHub Pages
 
 on:
   workflow_dispatch:
-  push:
-    branches: development
 
 permissions:
   contents: read
@@ -15,8 +13,34 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
+
     env:
-      CI: ${{ vars.CI }} # Set CI to false for this job
+      # Build Configuration
+      CI: ${{ vars.CI }}
+      NODE_ENV: ${{ vars.NODE_ENV }}
+      PORT: ${{ vars.PORT }}
+      
+      # App Configuration
+      REACT_APP_NAME: ${{ vars.REACT_APP_NAME }}
+      REACT_APP_DESCRIPTION: ${{ vars.REACT_APP_DESCRIPTION }}
+      REACT_APP_VERSION: ${{ vars.REACT_APP_VERSION }}
+      
+      # API Configuration
+      REACT_APP_API_URL: ${{ vars.REACT_APP_API_URL }}
+      REACT_APP_API_KEY: ${{ vars.REACT_APP_API_KEY }}
+      REACT_APP_API_TIMEOUT: ${{ vars.REACT_APP_API_TIMEOUT }}
+      
+      # Cache Configuration
+      # REACT_APP_CACHE_TTL: ${{ vars.REACT_APP_CACHE_TTL }}
+      # REACT_APP_MAX_CACHE_SIZE: ${{ vars.REACT_APP_MAX_CACHE_SIZE }}
+      
+      # Analytics Configuration
+      REACT_APP_ANALYTICS_ID: ${{ vars.REACT_APP_ANALYTICS_ID }}
+      REACT_APP_ENABLE_ERROR_REPORTING: ${{ vars.REACT_APP_ENABLE_ERROR_REPORTING }}
+      
+      # Social Media Integration
+      REACT_APP_SOCIAL_SHARING_URL: ${{ vars.REACT_APP_SOCIAL_SHARING_URL }}
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -25,15 +49,42 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ vars.NODE_VERSION }}
+          registry-url: ${{ vars.NPM_REGISTRY_URL }}
+          # cache: ${{ vars.PACKAGE_MANAGER }}
+          # cache-dependency-path: ${{ vars.PACKAGE_LOCK_PATH }}
+
+      # - name: Cache dependencies
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ${{ vars.CACHE_PATH }}
+      #     key: ${{ vars.CACHE_KEY_PREFIX }}-${{ hashFiles(vars.PACKAGE_LOCK_PATH) }}
+      #     restore-keys: |
+      #       ${{ vars.CACHE_KEY_PREFIX }}-
 
       - name: Install dependencies
         run: ${{ vars.INSTALL_COMMAND }}
+        env:
+          NODE_AUTH_TOKEN: ${{ vars.NPM_TOKEN }}
 
       - name: Check Linting
-        run: ${{ vars.LINT_COMMAND }}   
+        run: ${{ vars.LINT_COMMAND }}
+        env:
+          ESLINT_CONFIG_PATH: ${{ vars.ESLINT_CONFIG_PATH }}
+          PRETTIER_CONFIG_PATH: ${{ vars.PRETTIER_CONFIG_PATH }}
+
+      # - name: Run Tests
+      #   if: ${{ vars.RUN_TESTS == 'true' }}
+      #   run: ${{ vars.TEST_COMMAND }}
+      #   env:
+      #     JEST_CONFIG_PATH: ${{ vars.JEST_CONFIG_PATH }}
+      #     TEST_COVERAGE_THRESHOLD: ${{ vars.TEST_COVERAGE_THRESHOLD }}
 
       - name: Build React app
         run: ${{ vars.BUILD_COMMAND }}
+        env:
+          GENERATE_SOURCEMAP: ${{ vars.GENERATE_SOURCEMAP }}
+          MINIMIZE_BUILD: ${{ vars.MINIMIZE_BUILD }}
+          ANALYZER_MODE: ${{ vars.ANALYZER_MODE }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
