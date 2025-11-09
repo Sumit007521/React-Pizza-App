@@ -27,7 +27,7 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        with:
+        env:
           node-version: $NODE_VERSION
           registry-url: $NPM_REGISTRY_URL
 
