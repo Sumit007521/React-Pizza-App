@@ -14,7 +14,8 @@ jobs:
     environment:
       name: production
     env:
-      NODE_ENV: ${{ vars.NODE_ENV }}  
+      NODE_ENV: ${{ vars.NODE_ENV }}
+      CI: ${{ vars.CI }}
       
     steps:
       - name: Checkout code
