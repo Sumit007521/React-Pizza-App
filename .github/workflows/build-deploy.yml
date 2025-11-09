@@ -62,7 +62,7 @@ jobs:
       #       ${{ vars.CACHE_KEY_PREFIX }}-
 
       - name: Install dependencies
-        run: ${{ vars.INSTALL_COMMAND }}
+        run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ vars.NPM_TOKEN }}
 

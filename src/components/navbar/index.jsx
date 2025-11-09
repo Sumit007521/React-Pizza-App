@@ -24,7 +24,7 @@ export default function Navbar() {
       <h2 className="text-2xl font-semibold flex items-center gap-3">
         <NavLink to={"/"} className="flex items-center gap-3">
           <img src={logo} alt="Food logo" className="w-20 h-20 rounded-full shadow-sm" />
-          <span className="text-black dark:text-white hover:opacity-90" style={{ color: "#FF6347" }}>Food Recipes</span>
+          <span className="text-black dark:text-white hover:opacity-90" style={{ color: "#FF6347" }}>{process.env.REACT_APP_NAME}</span>
         </NavLink>
       </h2>
       <form onSubmit={handleSubmit} className="relative">
