@@ -24,6 +24,8 @@ jobs:
       REACT_APP_NAME: ${{ vars.REACT_APP_NAME }}
       REACT_APP_DESCRIPTION: ${{ vars.REACT_APP_DESCRIPTION }}
       REACT_APP_VERSION: ${{ vars.REACT_APP_VERSION }}
+      PRICE: ${{ vars.REACT_APP_PRICE }}
+      PIZZA_DESCRIPTION: ${{ vars.REACT_APP_PIZZA_DESCRIPTION }}
       
       # API Configuration
       REACT_APP_API_URL: ${{ vars.REACT_APP_API_URL }}

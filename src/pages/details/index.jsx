@@ -60,7 +60,7 @@ export default function Details() {
 
           {/* Description Placeholder */}
           <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-            This delicious dish is easy to make and packed with flavor. Perfect
+            {process.env.REACT_APP_PIZZA_DESCRIPTION} Perfect
             for family dinners or gatherings with friends.
           </p>
 
@@ -80,7 +80,7 @@ export default function Details() {
           {/* --- Price / Button Section --- */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-4">
             <p className="text-lg font-semibold text-gray-800 dark:text-gray-100">
-              Rs. 210
+              Rs. {process.env.REACT_APP_PRICE}
             </p>
             <button
               onClick={() => handleAddToFavorite(recipe)}
@@ -90,7 +90,7 @@ export default function Details() {
                 favoritesList.length > 0 &&
                 favoritesList.findIndex((item) => item.id === recipe?.id) !== -1
                 ? "Remove from Favorites"
-                : "Add to Favorites"}
+                : process.env.REACT_APP_BUTTON_TITLE}
             </button>
           </div>
 
