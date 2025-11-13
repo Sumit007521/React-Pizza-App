@@ -32,10 +32,6 @@ jobs:
       REACT_APP_API_KEY: ${{ vars.REACT_APP_API_KEY }}
       REACT_APP_API_TIMEOUT: ${{ vars.REACT_APP_API_TIMEOUT }}
       
-      # Cache Configuration
-      # REACT_APP_CACHE_TTL: ${{ vars.REACT_APP_CACHE_TTL }}
-      # REACT_APP_MAX_CACHE_SIZE: ${{ vars.REACT_APP_MAX_CACHE_SIZE }}
-      
       # Analytics Configuration
       REACT_APP_ANALYTICS_ID: ${{ vars.REACT_APP_ANALYTICS_ID }}
       REACT_APP_ENABLE_ERROR_REPORTING: ${{ vars.REACT_APP_ENABLE_ERROR_REPORTING }}
@@ -55,14 +51,6 @@ jobs:
           # cache: ${{ vars.PACKAGE_MANAGER }}
           # cache-dependency-path: ${{ vars.PACKAGE_LOCK_PATH }}
 
-      # - name: Cache dependencies
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ${{ vars.CACHE_PATH }}
-      #     key: ${{ vars.CACHE_KEY_PREFIX }}-${{ hashFiles(vars.PACKAGE_LOCK_PATH) }}
-      #     restore-keys: |
-      #       ${{ vars.CACHE_KEY_PREFIX }}-
-
       - name: Install dependencies
         run: npm ci
         env:
@@ -73,13 +61,6 @@ jobs:
         env:
           ESLINT_CONFIG_PATH: ${{ vars.ESLINT_CONFIG_PATH }}
           PRETTIER_CONFIG_PATH: ${{ vars.PRETTIER_CONFIG_PATH }}
-
-      # - name: Run Tests
-      #   if: ${{ vars.RUN_TESTS == 'true' }}
-      #   run: ${{ vars.TEST_COMMAND }}
-      #   env:
-      #     JEST_CONFIG_PATH: ${{ vars.JEST_CONFIG_PATH }}
-      #     TEST_COVERAGE_THRESHOLD: ${{ vars.TEST_COVERAGE_THRESHOLD }}
 
       - name: Build React app
         run: ${{ vars.BUILD_COMMAND }}
