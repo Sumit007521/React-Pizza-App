@@ -1,4 +1,4 @@
-name: Deploy Job with GPT
+name: Deploy App with Custom Action
 
 on:
   workflow_dispatch:
