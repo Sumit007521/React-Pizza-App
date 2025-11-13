@@ -24,8 +24,8 @@ jobs:
       REACT_APP_NAME: 'Food Club'
       REACT_APP_DESCRIPTION: 'A modern pizza ordering application'
       REACT_APP_VERSION: '1.0.0'
-      PRICE: 300
-      PIZZA_DESCRIPTION: 'This delicious dish is easy to make and packed with flavor.'
+      REACT_APP_PRICE: 300
+      REACT_APP_PIZZA_DESCRIPTION: 'This delicious dish is easy to make and packed with flavor.'
       
       # API Configuration
       REACT_APP_API_URL: 'https://api.pizza.com/v1'
