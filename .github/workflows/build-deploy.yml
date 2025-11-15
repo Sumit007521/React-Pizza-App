@@ -25,6 +25,7 @@ jobs:
       REACT_APP_DESCRIPTION: 'A modern pizza ordering application'
       REACT_APP_VERSION: '1.0.0'
       REACT_APP_PRICE: 300
+      REACT_APP_BUTTON_TITLE: 'Add to Favorites'
       REACT_APP_PIZZA_DESCRIPTION: 'This delicious dish is easy to make and packed with flavor.'
       
       # API Configuration
