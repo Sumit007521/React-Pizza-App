@@ -42,7 +42,6 @@ jobs:
             if [ -z "${REQUIRED_VARS[${ITEM}]}" ]; then
               echo "Error: Environment variable '$ITEM' is not set."
               check_exit_status=1
-            fi
             else
                 echo "Environment variable '$ITEM' is set to '${REQUIRED_VARS[${ITEM}]}'"
             fi    
