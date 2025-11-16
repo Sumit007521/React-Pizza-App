@@ -11,8 +11,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: production
       
     steps:
       - name: Checkout code
@@ -30,13 +28,13 @@ jobs:
           NODE_AUTH_TOKEN: '8f3a1c2e4b5d6f7a8e9c0b1a2d3e4f5a'
 
       - name: Check Linting
-        run: ${{ vars.LINT_COMMAND }}
+        run: npm run lint
         env:
           ESLINT_CONFIG_PATH: .eslintrc.json
           PRETTIER_CONFIG_PATH: .prettierrc
 
       - name: Build React app
-        run: ${{ vars.BUILD_COMMAND }}
+        run: npm run build
         env:
           GENERATE_SOURCEMAP: true
           MINIMIZE_BUILD: true
@@ -61,7 +59,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./${{ vars.BUILD_DIR }}
+          path: ./build
 
   deploy:
     needs: build
