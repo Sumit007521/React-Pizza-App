@@ -21,7 +21,7 @@ jobs:
         run: |
           declare -A REQUIRED_VARS=(
             ["CI"]="false"
-            ["NODE_ENV"]="dev"
+            ["NODE_ENV"]="development"
             ["PORT"]="3000"
             ["REACT_APP_NAME"]="Food Club Adda"
             ["REACT_APP_DESCRIPTION"]="A modern pizza ordering application"
@@ -73,7 +73,7 @@ jobs:
           ANALYZER_MODE: disabled
 
           CI: false
-          NODE_ENV: 'development'
+          NODE_ENV: 'dev'
           PORT: 3000
           REACT_APP_NAME: 'Food Fest'
           REACT_APP_DESCRIPTION: 'A modern pizza ordering application'
