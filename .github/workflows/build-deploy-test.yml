@@ -72,7 +72,7 @@ jobs:
           MINIMIZE_BUILD: true
           ANALYZER_MODE: disabled
 
-          CI: 
+          CI: false
           NODE_ENV: 'development'
           PORT: 3000
           REACT_APP_NAME: 'Food Fest'
