@@ -72,8 +72,8 @@ jobs:
           MINIMIZE_BUILD: true
           ANALYZER_MODE: disabled
 
-          CI: false
-          NODE_ENV: 'dev'
+          CI: 
+          NODE_ENV: 'development'
           PORT: 3000
           REACT_APP_NAME: 'Food Fest'
           REACT_APP_DESCRIPTION: 'A modern pizza ordering application'
