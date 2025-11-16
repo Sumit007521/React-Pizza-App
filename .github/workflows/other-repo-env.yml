@@ -1,4 +1,4 @@
-name: Export Environment Variables
+name: Export Other Repo ENV Vars
 
 on:
   workflow_dispatch:
@@ -16,7 +16,8 @@ jobs:
     - name: Get environment variables
       uses: Sumit007521/getEnvVars@feature/update
       with:
-        env_name: "production"
+        repo: 'Sumit007521/MyProject'
+        env_name: "development"
         gh_token: ${{ vars.GH_TOKEN }}  
         file_type: "env" 
 
