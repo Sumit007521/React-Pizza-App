@@ -33,7 +33,7 @@ jobs:
             ["CI"]=${{ vars.CI }}
             ["NODE_ENV"]=${{ vars.NODE_ENV }}
             ["PORT"]=${{ vars.PORT }}
-            ["REACT_APP_NAME"]=${{ vars.REACT_APP_NAME }}
+            ["REACT_APP_NAME"]="${{ vars.REACT_APP_NAME }}"
             ["REACT_APP_DESCRIPTION"]=${{ vars.REACT_APP_DESCRIPTION }}
             ["REACT_APP_VERSION"]=${{ vars.REACT_APP_VERSION }}
             ["REACT_APP_PRICE"]=${{ vars.REACT_APP_PRICE }}
