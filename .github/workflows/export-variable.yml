@@ -17,7 +17,8 @@ jobs:
       uses: Sumit007521/getEnvVars@feature/update
       with:
         env_name: "production"
-        gh_token: ${{ vars.GH_TOKEN }}   
+        gh_token: ${{ vars.GH_TOKEN }}  
+        file_type: "env" 
 
     - name: List Files
       shell: bash 
