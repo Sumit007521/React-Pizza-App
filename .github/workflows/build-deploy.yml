@@ -1,4 +1,4 @@
-name: Deploy App to GitHub Pages
+name: Deploy App 2
 
 on:
   workflow_dispatch:

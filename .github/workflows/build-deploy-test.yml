@@ -1,4 +1,4 @@
-name: Deploy App 2
+name: Deploy App to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
         run: |
           declare -A REQUIRED_VARS=(
             ["CI"]="false"
-            ["NODE_ENV"]="development"
+            ["NODE_ENV"]="dev"
             ["PORT"]="3000"
             ["REACT_APP_NAME"]="Food Club Adda"
             ["REACT_APP_DESCRIPTION"]="A modern pizza ordering application"
