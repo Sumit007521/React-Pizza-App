@@ -34,11 +34,11 @@ jobs:
             ["NODE_ENV"]=${{ vars.NODE_ENV }}
             ["PORT"]=${{ vars.PORT }}
             ["REACT_APP_NAME"]="${{ vars.REACT_APP_NAME }}"
-            ["REACT_APP_DESCRIPTION"]=${{ vars.REACT_APP_DESCRIPTION }}
+            ["REACT_APP_DESCRIPTION"]="${{ vars.REACT_APP_DESCRIPTION }}"
             ["REACT_APP_VERSION"]=${{ vars.REACT_APP_VERSION }}
             ["REACT_APP_PRICE"]=${{ vars.REACT_APP_PRICE }}
-            ["REACT_APP_BUTTON_TITLE"]=${{ vars.REACT_APP_BUTTON_TITLE }}
-            ["REACT_APP_PIZZA_DESCRIPTION"]=${{ vars.REACT_APP_PIZZA_DESCRIPTION }}
+            ["REACT_APP_BUTTON_TITLE"]="${{ vars.REACT_APP_BUTTON_TITLE }}"
+            ["REACT_APP_PIZZA_DESCRIPTION"]="${{ vars.REACT_APP_PIZZA_DESCRIPTION }}"
             ["REACT_APP_API_URL"]=${{ vars.REACT_APP_API_URL }}
             ["REACT_APP_API_KEY"]=${{ vars.REACT_APP_API_KEY }}
             ["REACT_APP_API_TIMEOUT"]=${{ vars.REACT_APP_API_TIMEOUT }}
