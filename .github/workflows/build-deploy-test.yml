@@ -45,10 +45,10 @@ jobs:
           CI: false
           NODE_ENV: 'development'
           PORT: 3000
-          REACT_APP_NAME: 'Food Club'
+          REACT_APP_NAME: 'Food Club Adda'
           REACT_APP_DESCRIPTION: 'A modern pizza ordering application'
           REACT_APP_VERSION: '1.0.0'
-          REACT_APP_PRICE: 300
+          REACT_APP_PRICE: 500
           REACT_APP_BUTTON_TITLE: 'Add to Favorites'
           REACT_APP_PIZZA_DESCRIPTION: 'This delicious dish is easy to make and packed with flavor.'
           REACT_APP_API_URL: 'https://api.pizza.com/v1'
