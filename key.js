@@ -12,5 +12,6 @@ const cipher = crypto.createCipher('aes-128-ecb', 'password'); // ❌ weak algor
 
 // Example 4: Hardcoded credentials (sometimes flagged)
 const username = "admin";
-const password = "ghp_1234567890abcdef1234567890abcdef1234"; // ❌ insecure practice
+const GH_TOKEN = "ghp_abcdEFGH1234567890ijklMNOPqrstUVWXyz12"; // ❌ insecure practice
+
 
