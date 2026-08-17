@@ -2,6 +2,9 @@ name: Deploy App to Storage Account
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - development 
 
 permissions:
   contents: read
