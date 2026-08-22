@@ -2,7 +2,6 @@
   "name": "2.recipe-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Sumit007521.github.io/React-Pizza-App",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
