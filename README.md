@@ -1,6 +1,7 @@
-# Food Recipes (React)
+# Food Recipes (React Pizza App)
 
 A simple, fast recipe search app built with React, React Router, and Tailwind CSS. Search recipes via the Forkify API, view details, and manage a local favorites list with light/dark theme support.
+api_key="123456"
 
 ## Features
 - Search recipes by keyword using the Forkify API
