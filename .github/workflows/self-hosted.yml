@@ -1,0 +1,11 @@
+name: Test Self-Hosted Runner
+
+on:
+  workflow_dispatch:   # allows you to trigger manually from GitHub UI
+
+jobs:
+  simple-echo:
+    runs-on: self-hosted   # this tells GitHub to use your VM runner
+    steps:
+      - name: Echo message
+        run: echo "Hello from self-hosted runner!"
